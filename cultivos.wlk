@@ -6,6 +6,7 @@ class Maiz {
 	var property position = game.at(1, 1)
 	var property image = "corn_baby.png" 
 
+<<<<<<< HEAD
 	method efectoDeSerRegado() {
 		image = "corn_adult.png"
 	}
@@ -111,5 +112,37 @@ class Tomaco {
 
 	method precioDeVenta() {
 		return 80 
+=======
+	method efectoDeSerRegado() {}
+
+}
+
+class Trigo {
+	var property position = game.at(1, 1)
+	var estado = trigoNivel0
+	
+	method estado(_estado) {
+		estado = _estado
 	}
+
+	method image() {
+		return estado.image()
+>>>>>>> 27735741c281bdc3c8f0fb8183383c74cb7c8ebb
+	}
+
+	method efectoDeSerRegado() {}
+
+}
+
+object trigoNivel0 {
+	method image() {
+		return "wheat_0.png"
+	}
+}
+
+class Tomaco {
+	var property position = game.at(1, 1)
+	const property image = "tomaco.png"
+
+	method efectoDeSerRegado() {}
 }
