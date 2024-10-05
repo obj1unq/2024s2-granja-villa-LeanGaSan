@@ -23,12 +23,10 @@ program farmville {
 	keyboard.r().onPressDo({hector.regar()})
 	// COSECHAR
 	keyboard.c().onPressDo({hector.cosecharAhi()})
-<<<<<<< HEAD
 	// VENDER
 	keyboard.v().onPressDo({hector.vender()})
 	// DECIR QUÉ TIENE PARA VENDER Y CUÁNTO ORO TIENE
-=======
->>>>>>> 27735741c281bdc3c8f0fb8183383c74cb7c8ebb
+
 	
 	//  VISUALES
  	game.addVisualCharacter(hector)

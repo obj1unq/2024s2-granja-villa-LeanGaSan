@@ -7,7 +7,6 @@ object hector {
 	const property image = "player.png"
 
 	var property monedasAcumuladas = 0
-<<<<<<< HEAD
 	const property cultivosCosechadosActuales = [] 
 
 	method mover(direccion) {
@@ -28,38 +27,20 @@ object hector {
 	method sembrar(cultivo) {
 		cultivo.position(self.position())
 		game.addVisual(cultivo)
-=======
-	const property plantasCosechadasActuales = [] 
-
-	method mover(direccion) {
-		position = direccion.siguiente(self.position())
-	}
-
-	method sembrar(planta) {
-
->>>>>>> 27735741c281bdc3c8f0fb8183383c74cb7c8ebb
 	}
 
 	method regar() {
 		self.validarRegar()
 		const planta = game.uniqueCollider(self)
-<<<<<<< HEAD
 		planta.efectoDeSerRegado()
 	}
 
 	method validarRegar() {
 		if (not granja.hayCultivoEn(self.position())) {
-=======
-	}
-
-	method validarRegar() {
-		if (not ) {
->>>>>>> 27735741c281bdc3c8f0fb8183383c74cb7c8ebb
 			self.error("No tengo nada para regar")
 		}
 	}
 
-<<<<<<< HEAD
 	method cosechar(cultivo) {
 		cultivosCosechadosActuales.add(cultivo)
 	}
@@ -83,24 +64,3 @@ object hector {
 		return cultivosCosechadosActuales.sum({cultivo => cultivo.precioDeVenta()})
 	}
 }
-
-=======
-	method cosechar(planta) {
-		plantasCosechadasActuales.add(planta)
-	}
-
-	method cosecharAhi() {
-		const planta = game.uniqueCollider(self)
-		self.cosecharVisual(planta)
-	}
-
-	method cosecharVisual(planta) {
-		self.cosechar(planta)
-		game.removeVisual(planta)
-	}
-}
-
-object granja {
-	
-}
->>>>>>> 27735741c281bdc3c8f0fb8183383c74cb7c8ebb
