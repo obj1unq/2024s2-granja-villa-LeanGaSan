@@ -9,6 +9,8 @@ object hector {
 	var property monedasAcumuladas = 0
 	const property cultivosCosechadosActuales = [] 
 
+	method esCultivo() = false
+
 	method mover(direccion) {
 		self.validarMover(direccion)
 		self.desplazar(direccion)
@@ -27,6 +29,7 @@ object hector {
 	method sembrar(cultivo) {
 		cultivo.position(self.position())
 		game.addVisual(cultivo)
+		granja.agregarCultivo(cultivo)
 	}
 
 	method regar() {
@@ -42,10 +45,18 @@ object hector {
 	}
 
 	method cosechar(cultivo) {
+		self.validarCosechar()
 		cultivosCosechadosActuales.add(cultivo)
 	}
 
+	method validarCosechar() {
+		if (not granja.hayCultivoEn(self.position())) {
+			self.error("No tengo nada para cosechar")
+		}
+	}
+
 	method cosecharAhi() {
+		self.validarCosechar()
 		const cultivo = game.uniqueCollider(self)
 		self.cosecharVisual(cultivo)
 	}
